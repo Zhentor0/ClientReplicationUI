@@ -404,6 +404,7 @@ utilityElements.Tools.MouseButton1Click:Connect(function()
 end)
  
 utilityElements.Replicate.MouseButton1Click:Connect(function()
+while true do
 local playerName = game.Players.LocalPlayer.Name
 local playerAircraft = workspace[playerName.."Aircraft"]
 
@@ -508,6 +509,7 @@ end
     part.CFrame = part.CFrame * rotation
     
     wingPartIndex = wingPartIndex + 1
+    wait(0.01)
     end
     _functions.load()
 end)
