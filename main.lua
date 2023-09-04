@@ -120,14 +120,7 @@ _functions = {
         utilityElements.Tools.Text = "Done respawning?"
         repeat runservice.RenderStepped:Wait() until utilityElements.Tools.Text == "Load Tools"
         
-        for _, tool in pairs(LocalPlayer:GetChildren()) do
-            if tool:IsA("Tool") then
-                tool.Parent = LocalPlayer.Backpack
-            end
-        end
-        LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = savepos
-        tempchar:Destroy()
-    end;
+         
     load = function()
         local b = _player.b()
         local c = _player.c()
@@ -244,7 +237,7 @@ _functions = {
             end
         end)
     end;
-}
+end}
 _cframe = {
     diff = function(a, b)
         return (a:Inverse() * b)
@@ -404,7 +397,6 @@ utilityElements.Tools.MouseButton1Click:Connect(function()
 end)
  
 utilityElements.Replicate.MouseButton1Click:Connect(function()
-while true do
 local playerName = game.Players.LocalPlayer.Name
 local playerAircraft = workspace[playerName.."Aircraft"]
 
@@ -509,7 +501,6 @@ end
     part.CFrame = part.CFrame * rotation
     
     wingPartIndex = wingPartIndex + 1
-    wait(0.01)
     end
     _functions.load()
 end)
